@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["tellesleandro@gmail.com"]
 
   spec.summary       = "Integração com a API do SEI."
-  spec.description   = "Expõe, através de métodos ruby, as funcionalidades da API do SEI. Permite apontar o WSDL individualmente para os ambientes DEVELOPMENT, TEST e PRODUCTION."
+  spec.description   = "Expõe, através de métodos ruby, as funcionalidades da API do SEI."
   spec.homepage      = "https://github.com"
   spec.license       = "MIT"
 
@@ -33,4 +33,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.13"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "minitest", "~> 5.0"
+  spec.add_development_dependency 'gem_config'
+  spec.add_development_dependency 'savon'
+  spec.add_development_dependency 'valuable'
+
 end
