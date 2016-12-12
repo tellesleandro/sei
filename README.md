@@ -1,41 +1,89 @@
-# Sei
+# SEI!
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/sei`. To experiment with that code, run `bin/console` for an interactive prompt.
+Esta gem facilita o acesso ao webservice do SEI!. Ela possui a implementação dos métodos gerar_procedimento e incluir_documento. O retorno do webservice é automaticamente associado às classes de retorno que possuem os atributos retornados por cada serviço. Estes atributos são acessados através de assessores da classe.
 
-TODO: Delete this and the text above, and describe your gem
+## Instalação
 
-## Installation
-
-Add this line to your application's Gemfile:
+Adicione esta linha no Gemfile da sua aplicação:
 
 ```ruby
 gem 'sei'
 ```
 
-And then execute:
+E execute:
 
     $ bundle
 
-Or install it yourself as:
+Ou instale através do seguinte comando:
 
     $ gem install sei
 
-## Usage
+## Uso
 
-TODO: Write usage instructions here
+A classe test/sei_test.rb possui casos de teste que podem ser utilizados como exemplo para chamada dos serviços.
 
-## Development
+Antes de chamar os métodos dos serviços, é necessário configurar a gem através do comando:
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+```ruby
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+Sei.configure do |config|
+  config.wsdl = ENV['SEI_CONFIG_WSDL']
+  config.follow_redirects = true
+  config.pretty_print_xml = true
+  config.sigla = ENV['SEI_CONFIG_SIGLA']
+  config.identificacao = ENV['SEI_CONFIG_IDENTIFICACAO']
+end
 
-## Contributing
+```
+onde
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/sei. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+config.wsdl é o endereço do WSDL do SEI, por exemplo http[s]://[servidor php]/sei/controlador_ws.php?servico=sei';
+config.follow_redirects indica para a biblioteca 'savon' que ela deve seguir as respostas 'redirect' devolvidas pelo servidor;
+config.pretty_print_xml indica para a biblioteca 'savon' que as mensagens XML geradas devem ser impressas no console de forma formatada;
+config.sigla é a sigla do sistema configurada no SEI, através do menu administração -> sistemas;
+config.identificacao é a identificação do serviço configurado no SEI, através do menu administração -> sistemas;
 
+Exemplo:
 
-## License
+```ruby
+
+procedimento = Sei::Estruturas::Procedimento.new
+                .id_tipo_procedimento(id_tipo_procedimento)
+                .especificacao(especificacao)
+                .assunto(codigo_estruturado, descricao)
+                .interessado(sigla, nome)
+                .observacao(observacao)
+                .nivel_de_acesso(nivel_de_acesso)
+    
+retorno_geracao_procedimento = Sei::Servico.gerar_procedimento(
+                                  id_unidade,
+                                  procedimento,
+                                  documentos,
+                                  procedimentos_relacionados,
+                                  unidades_envio,
+                                  manter_aberto_unidade,
+                                  enviar_email_notificacao,
+                                  data_retorno_programado,
+                                  dias_retorno_programado,
+                                  dias_uteis_retorno_programado)
+
+puts retorno_geracao_procedimento.id_procedimento
+
+```
+
+## Desenvolvimento
+
+Após checar o repositório, execute `bin/setup` para instalar as dependências. Depois, execute `rake test` para rodar os testes. É possível também executar `bin/console` para carregar o prompt interativo que permite testar a gem na linha de comando.
+
+Para instalar esta gem na sua máquina local, execute `bundle exec rake install`. Para publicar uma nova versão, atualize o número da versão em `version.rb` e execute `bundle exec rake release`. Isto criará uma tag git para a versão. Envie (push) os commits e tags e envie (push) o arquivo `.gem` para [rubygems.org](https://rubygems.org).
+
+## Contribuindo
+
+Indicação de bugs e pull requests são bem-vindos no GitHub (https://github.com/tellesleandro/sei). Este projeto tem a intenção de ser seguro e incentiva a colaboração. É esperado que os contribuidores sigam o código de conduta [Contributor Covenant](http://contributor-covenant.org).
+
+## Licença/License
+
+Esta gem está disponível como código aberto dentro dos termos da [MIT License](http://opensource.org/licenses/MIT).
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
