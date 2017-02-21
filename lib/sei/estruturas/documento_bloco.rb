@@ -3,7 +3,7 @@ module Sei
   module Estruturas
 
     class DocumentoBloco
- 
+
       def id_unidade(id_unidade)
         @tipo = id_unidade
         self
