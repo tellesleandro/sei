@@ -4,10 +4,10 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'sei/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "sei"
+  spec.name          = "sei-ima"
   spec.version       = Sei::VERSION
-  spec.authors       = ["Leandro Telles"]
-  spec.email         = ["tellesleandro@gmail.com"]
+  spec.authors       = ["Alexandre Soares feat Leandro Telles"]
+  spec.email         = ["alexandre.soares.ima@gmail.com"]
 
   spec.summary       = "Integração com a API do SEI."
   spec.description   = "Expõe, através de métodos ruby, as funcionalidades da API do SEI."
