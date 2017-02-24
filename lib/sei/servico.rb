@@ -5,7 +5,10 @@ module Sei
     def self.gerar_procedimento(id_unidade, procedimento, documentos = [], procedimentos_relacionados = [], unidades_envio = [], manter_aberto_unidade = 'N',
                   enviar_email_notificacao = 'N', data_retorno_programado = nil, dias_retorno_programado = nil, dias_uteis_retorno_programado = 'N')
       message = {
+<<<<<<< HEAD
       
+=======
+>>>>>>> 3c4f7494303b23be42582699b7688f6e8fdec3cc
         SiglaSistema: Sei.configuration.sigla,
         IdentificacaoServico: Sei.configuration.identificacao,
         IdUnidade: id_unidade,
@@ -20,7 +23,10 @@ module Sei
         SinDiasUteisRetornoProgramado: dias_uteis_retorno_programado
       }
       response = Sei::Connection.instance.call :gerar_procedimento, message: message
+<<<<<<< HEAD
       
+=======
+>>>>>>> 3c4f7494303b23be42582699b7688f6e8fdec3cc
       body = response.body[:gerar_procedimento_response][:parametros]
       Sei::Estruturas::RetornoGeracaoProcedimento.new body
     end
@@ -37,6 +43,7 @@ module Sei
       Sei::Estruturas::RetornoInclusaoDocumento.new body
     end
 
+<<<<<<< HEAD
     def self.incluir_documento_bloco(id_unidade,id_bloco,protocolo_documento)
       message = {
         SiglaSistema: Sei.configuration.sigla,
@@ -238,6 +245,8 @@ module Sei
       body = response.body[:gerar_bloco_response][:parametros]
       Sei::Estruturas::RetornoGeracaoBloco.new body
     end
+=======
+>>>>>>> 3c4f7494303b23be42582699b7688f6e8fdec3cc
   end
 
 end
