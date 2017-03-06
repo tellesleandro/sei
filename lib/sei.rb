@@ -13,7 +13,6 @@ require 'sei/estruturas/documento'
 require 'sei/estruturas/procedimento'
 require 'sei/estruturas/retorno_inclusao_documento'
 require 'sei/estruturas/retorno_geracao_procedimento'
-<<<<<<< HEAD
 require 'sei/estruturas/retorno_unidade'
 require 'sei/estruturas/retorno_list_unidades'
 require 'sei/estruturas/retorno_geracao_bloco'
@@ -26,8 +25,6 @@ require 'sei/estruturas/retorno_list_usuarios'
 require 'sei/estruturas/retorno_consultar_procedimento'
 
 
-=======
->>>>>>> 3c4f7494303b23be42582699b7688f6e8fdec3cc
 
 module Sei
 
