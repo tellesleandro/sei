@@ -6,7 +6,7 @@ require 'sei/version'
 Gem::Specification.new do |spec|
   spec.name          = "sei"
   spec.version       = Sei::VERSION
-  spec.authors       = ["Leandro Telles"]
+  spec.authors       = ["Alexandre Soares feat Leandro Telles"]
   spec.email         = ["tellesleandro@gmail.com"]
 
   spec.summary       = "Integração com a API do SEI."
