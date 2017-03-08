@@ -13,6 +13,16 @@ require 'sei/estruturas/documento'
 require 'sei/estruturas/procedimento'
 require 'sei/estruturas/retorno_inclusao_documento'
 require 'sei/estruturas/retorno_geracao_procedimento'
+require 'sei/estruturas/retorno_unidade'
+require 'sei/estruturas/retorno_list_unidades'
+require 'sei/estruturas/retorno_geracao_bloco'
+require 'sei/estruturas/retorno_inclusao_documento_bloco'
+require 'sei/estruturas/retorno_inclusao_processo_bloco'
+require 'sei/estruturas/retorno_conclusao_processo'
+require 'sei/estruturas/retorno_boolean'
+require 'sei/estruturas/retorno_usuario'
+require 'sei/estruturas/retorno_list_usuarios'
+require 'sei/estruturas/retorno_consultar_procedimento'
 
 module Sei
 
