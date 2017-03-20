@@ -4,21 +4,21 @@ module Sei
 
     class RetornoConsultarProcedimento < ::Valuable
 
-      has_value :idProcedimento
-      has_value :procedimentoFormatado
+      has_value :id_procedimento
+      has_value :procedimento_formatado
       has_value :especificacao
-      has_value :dataAutuacao
-      has_value :linkAcesso
-      has_value :tipoProcedimento
+      has_value :data_autuacao
+      has_value :link_acesso
+      has_value :tipo_procedimento
       
 
       def initialize(params)
-        self.idProcedimento = params[:idProcedimento]
-        self.procedimentoFormatado = params[:procedimentoFormatado]
+        self.id_procedimento = params[:id_procedimento]
+        self.procedimento_formatado = params[:procedimento_formatado]
         self.especificacao = params[:especificacao]
-        self.dataAutuacao = params[:dataAutuacao]
-        self.linkAcesso = params[:linkAcesso]
-        self.tipoProcedimento = params[:tipoProcedimento]
+        self.data_autuacao = params[:data_autuacao]
+        self.link_acesso = params[:link_acesso]
+        self.tipo_procedimento = params[:tipo_procedimento]
         initialize_attributes
       end
 
