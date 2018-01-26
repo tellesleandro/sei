@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "Integração com a API do SEI."
   spec.description   = "Expõe, através de métodos ruby, as funcionalidades da API do SEI."
-  spec.homepage      = "https://github.com"
+  spec.homepage      = "https://github.com/tellesleandro/sei"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -34,8 +34,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "minitest", "~> 5.0"
   
-  spec.add_dependency 'gem_config'
-  spec.add_dependency 'savon'
-  spec.add_dependency 'valuable'
+  spec.add_runtime_dependency 'gem_config', '~> 0'
+  spec.add_runtime_dependency 'savon', '~> 0'
+  spec.add_runtime_dependency 'valuable', '~> 0'
 
 end
