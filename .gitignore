@@ -7,3 +7,5 @@
 /pkg/
 /spec/reports/
 /tmp/
+/test/config.yml
+/sei*.gem

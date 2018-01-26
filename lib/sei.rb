@@ -23,6 +23,7 @@ require 'sei/estruturas/retorno_boolean'
 require 'sei/estruturas/retorno_usuario'
 require 'sei/estruturas/retorno_list_usuarios'
 require 'sei/estruturas/retorno_consultar_procedimento'
+require 'sei/estruturas/retorno_consultar_documento'
 
 module Sei
 

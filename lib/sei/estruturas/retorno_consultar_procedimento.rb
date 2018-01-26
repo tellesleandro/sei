@@ -9,8 +9,7 @@ module Sei
       has_value :especificacao
       has_value :data_autuacao
       has_value :link_acesso
-      has_value :tipo_procedimento
-      
+      has_value :tipo_procedimento      
 
       def initialize(params)
         self.id_procedimento = params[:id_procedimento]

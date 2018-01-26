@@ -1,6 +1,26 @@
 # SEI!
 
-Esta gem facilita o acesso ao webservice do SEI!. Ela possui a implementação dos métodos gerar_procedimento e incluir_documento. O retorno do webservice é automaticamente associado às classes de retorno que possuem os atributos retornados por cada serviço. Estes atributos são acessados através de assessores da classe.
+Esta gem facilita o acesso ao webservice do SEI!. Ela possui a implementação dos métodos:
+
+* atribuir_processo
+* cancelar_documento
+* concluir_processo
+* consultar_documento
+* consultar_procedimento
+* disponibilizar_bloco
+* excluir_bloco
+* gerar_bloco
+* gerar_procedimento
+* incluir_documento
+* incluir_documento_bloco
+* incluir_processo_bloco
+* listar_unidades
+* listar_usuarios
+* reabrir_processo
+* retirar_documento_bloco
+* retirar_processo_bloco
+
+ O retorno do webservice é automaticamente associado às classes de retorno que possuem os atributos retornados por cada serviço. Estes atributos são acessados através de assessores da classe.
 
 ## Instalação
 
@@ -25,7 +45,6 @@ A classe test/sei_test.rb possui casos de teste que podem ser utilizados como ex
 Antes de chamar os métodos dos serviços, é necessário configurar a gem através do comando:
 
 ```ruby
-
 Sei.configure do |config|
   config.wsdl = ENV['SEI_CONFIG_WSDL']
   config.follow_redirects = true
@@ -33,20 +52,22 @@ Sei.configure do |config|
   config.sigla = ENV['SEI_CONFIG_SIGLA']
   config.identificacao = ENV['SEI_CONFIG_IDENTIFICACAO']
 end
-
 ```
 onde
 
 config.wsdl é o endereço do WSDL do SEI, por exemplo http[s]://[servidor php]/sei/controlador_ws.php?servico=sei';
+
 config.follow_redirects indica para a biblioteca 'savon' que ela deve seguir as respostas 'redirect' devolvidas pelo servidor;
+
 config.pretty_print_xml indica para a biblioteca 'savon' que as mensagens XML geradas devem ser impressas no console de forma formatada;
+
 config.sigla é a sigla do sistema configurada no SEI, através do menu administração -> sistemas;
+
 config.identificacao é a identificação do serviço configurado no SEI, através do menu administração -> sistemas;
 
 Exemplo:
 
 ```ruby
-
 procedimento = Sei::Estruturas::Procedimento.new
                 .id_tipo_procedimento(id_tipo_procedimento)
                 .especificacao(especificacao)
@@ -68,7 +89,6 @@ retorno_geracao_procedimento = Sei::Servico.gerar_procedimento(
                                   dias_uteis_retorno_programado)
 
 puts retorno_geracao_procedimento.id_procedimento
-
 ```
 
 ## Desenvolvimento
@@ -86,4 +106,3 @@ Indicação de bugs e pull requests são bem-vindos no GitHub (https://github.co
 Esta gem está disponível como código aberto dentro dos termos da [MIT License](http://opensource.org/licenses/MIT).
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
